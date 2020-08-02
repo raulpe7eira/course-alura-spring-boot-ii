@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class TokenSerivce {
+public class TokenService {
 
     @Value("${forum.jwt.expiration}")
     private Long expiration;
@@ -29,6 +29,15 @@ public class TokenSerivce {
                 .setExpiration(expira)
                 .signWith(SignatureAlgorithm.HS256, secret)
                 .compact();
+    }
+
+    public boolean isTokenValido(String token) {
+        try {
+            Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
     }
 
 }
