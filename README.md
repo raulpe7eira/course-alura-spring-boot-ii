@@ -9,6 +9,20 @@ Result of course **[Spring Boot Parte 2: Segurança da API, Cache e Monitorament
 
 ## Usage
 
-```bash
-$ ./mvnw spring-boot:run
-```
+- forum-app
+
+    ```bash
+    $ cd forum-app
+    $ ./mvnw spring-boot:run
+    ```
+
+    ![forum-app](forum-app.png)
+
+- forum-monitor
+
+    ```bash
+    $ cd forum-monitor
+    $ ./mvnw spring-boot:run
+    ```
+
+    ![forum-monitor](forum-monitor.png)
